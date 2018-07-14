@@ -26,7 +26,6 @@ with rounded corners in the top left and bottom right with a radius of 20 pixels
 
 
 body{
-    width: auto;
     background-color: #DDDDDD;
     font-size: 10pt;
 }
@@ -65,8 +64,9 @@ header {
 header,nav,main,footer {
     border-radius: 20px 0 20px 0;
     padding: 10px;
-    border-width: 1px;
+    border: 1px solid #000000;
     background-color: #EEEEEE;
+    margin: 5px;
 }
 nav{
     display: block;
@@ -106,6 +106,18 @@ ul.frontpage li img {
     margin-left: auto;
     margin-right: auto;
 }
+.film{
+    clear: both;
+}
+.film:nth-of-type(odd) img{
+    padding: 10px;
+    float: left;
+}
+.film:nth-of-type(even) img{
+    padding: 10px;
+    float: right;
+}
+
 #map{
     margin: 0;
 }
