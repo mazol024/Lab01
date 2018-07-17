@@ -1,6 +1,9 @@
+
 function showHideDetails() {
+    "use strict";
+    var paragraphs , p;
+
     //alert("Not implemented yet");
-    var paragraphs, p;
     paragraphs = this.parentNode.getElementsByTagName("p");
     //paragraphs = this.childNodes;
     for (p = 0; p < paragraphs.length; p+=1) {
@@ -16,6 +19,7 @@ function showHideDetails() {
 
 }
 function setup() {
+    "use strict";
     var films, f, title;
     films = document.getElementsByClassName("film");
     for (f = 0; f < films.length; f+=1) {

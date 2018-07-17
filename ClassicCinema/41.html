@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var numbers, ix;
+    numbers = [];
+    // Some information to the array
+    numbers[0] = "Zero";
+    numbers[1] = "One";
+    numbers[2] = "Two";
+    numbers[3] = "Three";
+    // Display the contents of the array
+    for (ix = 0; ix < numbers.length; ix+=1) {
+        alert(" From array : "+ numbers[ix]);
+    }
+    var item;
+    item = "Four";
+    numbers.push(item);
+    while (numbers.length > 0) {
+        item = numbers.pop();
+        alert("Form stack -> " + item);
+    }
+</script>
+</body>
+</html>
