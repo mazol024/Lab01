@@ -1,7 +1,7 @@
 
 function showHideDetails() {
     "use strict";
-    var paragraphs , p, image,images;
+    var paragraphs , p, images;
 
     //alert("Not implemented yet");
     paragraphs = this.parentNode.getElementsByTagName("p");
@@ -14,7 +14,7 @@ function showHideDetails() {
             paragraphs[p].style.display = "block";
             images[0].style.display = "block";
         } else {
-            paragraphs[p].style.display = "none"
+            paragraphs[p].style.display = "none";
             images[0].style.display = "none";
         }
     }
