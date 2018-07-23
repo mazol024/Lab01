@@ -1,10 +1,15 @@
 var imageList, imageIndex;
 function nextImage() {
-// Need some code in here using imageList and imageIndex
-var target = document.getElementById("carousel");
-//target.innerHTML = "<img src=’" + "images/Metropolis.jpg" +"’>";
-    target.innerHTML = "Hello  ";
-    target.innerHTML = "<img src=’images/Metropolis.jpg’>";
+    var target;
+    target = document.getElementById("carousel");
+    target.innerHTML = "<img src=" + imageList[imageIndex] + ">";
+        //alert(test);
+        if (imageIndex < 2 ) {
+            imageIndex +=1;
+        }
+        else {
+            imageIndex = 0;
+        }
 }
 function setup() {
     imageList = [];
@@ -12,10 +17,9 @@ function setup() {
     imageList.push("images/Plan_9_from_Outer_Space.jpg");
     imageList.push("images/Vertigo.jpg");
     imageIndex = 0;
-
+    setInterval(nextImage, 3000);
 }
 if (document.getElementById) {
     window.onload = setup;
-
 }
-nextImage();
+
