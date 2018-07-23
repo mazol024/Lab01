@@ -10,6 +10,7 @@ function nextImage() {
         else {
             imageIndex = 0;
         }
+
 }
 function setup() {
     imageList = [];
@@ -17,9 +18,9 @@ function setup() {
     imageList.push("images/Plan_9_from_Outer_Space.jpg");
     imageList.push("images/Vertigo.jpg");
     imageIndex = 0;
-    setInterval(nextImage, 3000);
+    setInterval(nextImage, 2000);
 }
 if (document.getElementById) {
     window.onload = setup;
-}
 
+}
