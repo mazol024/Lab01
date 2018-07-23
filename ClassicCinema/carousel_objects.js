@@ -1,23 +1,23 @@
 var objList,objIndex;
 
-function MovieCategory(title, image, page) {
+function MovieCategory(title, image,page) {
+    "use strict"
+    this.page = page;
     this.title = title;
     this.image = image;
-    this.page = page;
     this.makeHTML = function() {
         var target;
         target = document.getElementById("carousel");
-        target.innerHTML ="<a href=’classic.html’><figure>\n" +
-            "        <img src=’images/Metropolis.jpg’><figcaption>Classic Movies</figcaption>\n" +
-            "        </figure></a> "
+        target.innerHTML ="<a href=" + this.page+ "><figure>\n" +
+            "<img src=" + this.image +"><figcaption>" + this.title + "</figcaption>\n" +
+            "</figure></a> ";
        }
 }
 
 
 function nextObject() {
-    var target;
-    target = document.getElementById("carousel");
-    target.innerHTML = "<img src=" + objList[objIndex] + ">";
+    "use strict"
+    objList[objIndex].makeHTML();
     if (objIndex < 2 ) {
         objIndex +=1;
     }
@@ -26,11 +26,14 @@ function nextObject() {
     }
 }
 function setup() {
+    "use strict"
     objList = [];
-
-    objList.push("images/Metropolis.jpg");
-    objList.push("images/Plan_9_from_Outer_Space.jpg");
-    objList.push("images/Vertigo.jpg");
+    var classics = new MovieCategory("Classics","images/Metropolis.jpg","classic.html");
+    objList.push(classics);
+    var scifi = new MovieCategory("SciFi","images/Plan_9_from_Outer_Space.jpg","scifi.html");
+    objList.push(scifi);
+    var hitchcock = new MovieCategory("Hitchcock","images/Vertigo.jpg","hitchcock.html");
+    objList.push(hitchcock);
     objIndex = 0;
     setInterval(nextObject, 2000);
 }
