@@ -36,10 +36,8 @@ if (document.getElementById) {
 
 if (window.addEventListener) {
     window.addEventListener("load", Carousel.setup);
-    window.addEventListener("load", showHide.setup);
 } else if (window.attachEvent) {
     window.attachEvent("onload", Carousel.setup);
-    window.addEventListener("onload", showHide.setup);
 } else {
     alert("Could not attach ’MovieCategories.setup’ to the ’window.onload’ event");
 }
