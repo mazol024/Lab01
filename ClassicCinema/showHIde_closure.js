@@ -32,3 +32,12 @@ var showHide = (function() {
 
     };
     return pub;}());
+
+
+if (window.addEventListener) {
+    window.addEventListener("load", showHide.setup);
+} else if (window.attachEvent) {
+    window.attachEvent("onload", showHide.setup);
+} else {
+    alert("Could not attach ’showHide.setup’ to the ’window.onload’ event");
+}
