@@ -1,4 +1,5 @@
-var Carousel = (function(){ var pub = {};
+var Carousel = (function(){
+    var pub = {};
     var categoryList = []; var categoryIndex = 0;
     function nextCategory() {
         var element = document.getElementById("carousel"); element.innerHTML = categoryList[categoryIndex].makeHTML(); categoryIndex += 1;
@@ -11,7 +12,7 @@ var Carousel = (function(){ var pub = {};
         this.page = page;
         this.makeHTML = function() {
             return "<a href=’" + this.page + "’><figure>" +
-                "<img src=’" + this.image + "’>" + "<figcaption>" + this.title + "</figcaption>" + "</figure></a>";
+                "<img src=" + this.image + ">" + "<figcaption>" + this.title + "</figcaption>" + "</figure></a>";
         }; }
 
     pub.setup = function() {
@@ -34,11 +35,9 @@ if (document.getElementById) {
 */
 
 if (window.addEventListener) {
-    window.addEventListener("load", MovieCategories.setup);
-    window.addEventListener("load", showHide.setup);
+    window.addEventListener("load", Carousel.setup);
 } else if (window.attachEvent) {
-    window.attachEvent("onload", MovieCategories.setup);
-    window.attachEvent("onload", showHide.setup);
+    window.attachEvent("onload", Carousel.setup);
 } else {
     alert("Could not attach ’MovieCategories.setup’ to the ’window.onload’ event");
 }
