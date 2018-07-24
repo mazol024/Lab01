@@ -35,6 +35,7 @@ function setup() {
     var hitchcock = new MovieCategory("Hitchcock","images/Vertigo.jpg","hitchcock.html");
     objList.push(hitchcock);
     objIndex = 0;
+    nextObject();
     setInterval(nextObject, 2000);
 }
 if (document.getElementById) {
