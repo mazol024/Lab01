@@ -1,15 +1,21 @@
 var cart = (function(){
     var target ;
     var pub = {};
+    var myObject = [];
+
     function clicked(){
         /*alert("Add to Cart button Clicked!");*/
-        var myObject = {};
-       /* myObject.title = document.getElementById("h3").valueOf();
-        myObject.price = document.getElementById("price").valueOf();*/
-       pub.t1 = target;
-       myObject = this.previousSibling.valueOf();
-       alert(myObject);
+        var price , filmname;
 
+
+        filmname = this.parentNode.parentNode.getElementsByTagName("h3");
+        price = this.parentNode.getElementsByClassName("price");
+        myObject.push({title:filmname[0].textContent,price:price[0].textContent});
+
+        console.log(filmname[0].textContent);
+        console.log(price[0].textContent);
+        alert(myObject[0].title + "   " + myObject[0].price);
+        console.log(JSON.stringify(myObject));
     }
     pub.setup = function() {
 
