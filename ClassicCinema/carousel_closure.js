@@ -11,7 +11,7 @@ var Carousel = (function(){
         this.image = image;
         this.page = page;
         this.makeHTML = function() {
-            return "<a href=’" + this.page + "’><figure>" +
+            return "<a href=" + this.page + "><figure>" +
                 "<img src=" + this.image + ">" + "<figcaption>" + this.title + "</figcaption>" + "</figure></a>";
         }; }
 
