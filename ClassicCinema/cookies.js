@@ -17,17 +17,18 @@ var Cookie = (function () {
     pub.get = function (name) {
         var nameEq, cookies, cookie, i;
         nameEq = encodeURIComponent(name) + "=";
-        cookies = document.cookie.split(";");
+        cookies =  document.cookie.split(";");
         for (i = 0; i < cookies.length; i += 1) {
             cookie = cookies[i].trim();
-            if (cookie.indexOf(nameEq) === 0) {
+           if (cookie.indexOf(nameEq) === 0)
+           {
                 return decodeURIComponent(cookie.substring(nameEq.length, cookie.length));
             }
         }
         return null;
     };
     pub.clear = function (name) {
-        pub.set(encodeURIComponent(name), "", -1);
+        pub.set(name, "", -1);
     };
     return pub;
 }());

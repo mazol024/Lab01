@@ -2,7 +2,7 @@ var cart = (function(){
     var target ;
     var pub = {};
     var myObject = [];
-    var i,strObj
+    var i,strObj;
     function clicked(){
         /*alert("Add to Cart button Clicked!");*/
         var price , filmname;
@@ -13,7 +13,7 @@ var cart = (function(){
         myObject.push({title:filmname[0].textContent,price:price[0].textContent});
 
         /*strObj = strObj + myObject[0].title + " -> " + myObject[i].price + "\n ";*/
-        Cookie.set(JSON.stringify(filmname[0].textContent),JSON.stringify(price[0].textContent),"");
+        Cookie.set(encodeURIComponent((filmname[0].textContent)),encodeURIComponent((price[0].textContent)),"");
         alert(JSON.stringify(myObject));
 
     }
