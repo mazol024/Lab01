@@ -13,7 +13,7 @@ var cart = (function(){
         myObject.push({title:filmname[0].textContent,price:price[0].textContent});
 
         /*strObj = strObj + myObject[0].title + " -> " + myObject[i].price + "\n ";*/
-        Cookie.set(encodeURIComponent((filmname[0].textContent)),encodeURIComponent((price[0].textContent)),"");
+        Cookie.set(filmname[0].textContent,price[0].textContent,"");
         alert(JSON.stringify(myObject));
 
     }
