@@ -2,7 +2,7 @@ var cart = (function(){
     var target ;
     var pub = {};
     var myObject = [];
-
+    var i,strObj
     function clicked(){
         /*alert("Add to Cart button Clicked!");*/
         var price , filmname;
@@ -12,10 +12,10 @@ var cart = (function(){
         price = this.parentNode.getElementsByClassName("price");
         myObject.push({title:filmname[0].textContent,price:price[0].textContent});
 
-        console.log(filmname[0].textContent);
-        console.log(price[0].textContent);
-        alert(myObject[0].title + "   " + myObject[0].price);
-        console.log(JSON.stringify(myObject));
+        /*strObj = strObj + myObject[0].title + " -> " + myObject[i].price + "\n ";*/
+        Cookie.set(JSON.stringify(filmname[0].textContent),JSON.stringify(price[0].textContent),"");
+        alert(JSON.stringify(myObject));
+
     }
     pub.setup = function() {
 
@@ -28,12 +28,6 @@ var cart = (function(){
     };
     return pub; }());
 
-
-/*
-if (document.getElementById) {
-    window.onload = Carousel.setup;
-}
-*/
 
 if (window.addEventListener) {
     window.addEventListener("load", cart.setup);
