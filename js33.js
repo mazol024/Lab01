@@ -1,4 +1,3 @@
-"use strict";
 function sayHello() {
     var name;
     var target;
