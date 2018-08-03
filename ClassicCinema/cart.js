@@ -2,20 +2,24 @@ var cart = (function(){
     var target ;
     var pub = {};
     var myObject = [];
-    var i,strObj;
+    var i,strObj_old,strObj_new;
     function clicked(){
         /*alert("Add to Cart button Clicked!");*/
         var price , filmname;
+        strObj_old = Cookie.get("ShoppingCart");
+        if (strObj_old != null) {
+            myObject = JSON.parse(strObj_old);
+        }
 
 
         filmname = this.parentNode.parentNode.getElementsByTagName("h3");
         price = this.parentNode.getElementsByClassName("price");
         myObject.push({title:filmname[0].textContent,price:price[0].textContent});
-
-        /*strObj = strObj + myObject[0].title + " -> " + myObject[i].price + "\n ";*/
+/*
         Cookie.set(filmname[0].textContent,price[0].textContent,"");
-        alert(JSON.stringify(myObject));
-
+*/
+        strObj_new = JSON.stringify(myObject);
+        Cookie.set("ShoppingCart",strObj_new,"");
     }
     pub.setup = function() {
 
