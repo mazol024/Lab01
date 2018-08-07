@@ -1,4 +1,5 @@
 var Showcart = (function(){
+    "use strict";
     var pub = {};
     var myObjs = [];
     var i,name,price,strData ;
@@ -7,13 +8,17 @@ var Showcart = (function(){
     summ = 0;
     pub.setup = function() {
         strData = Cookie.get("ShoppingCart");
+        if (strData == ""){
+            document.getElementById("checkoutForm").hidden=true;
+            return "";
+        }
         myObjs  = JSON.parse(strData);
         text  = "<table><tr>\n" +
             "    <th style='text-align: left;width: 50%'>Films  Titles</th>\n" +
             "    <th style='text-align: right'>Price</th> \n" +
             "  </tr>\n"
             ;
-
+    if (myObjs != null ) {
         for (i=0; i< myObjs.length; i++)
         {
             name = myObjs[i]["title"];
@@ -25,8 +30,14 @@ var Showcart = (function(){
         }
         text = text + "</tr></table>";
         target = document.getElementById("cart1");
-        target.innerHTML =  text + "<hr><br><p style='text-align: center'>"+ "\nTotal cost  : " + summ + "</p>";
+        target.innerHTML =  text + "<hr><br><p style='text-align: center'>"+ "\nTotal cost  : " + summ.toFixed( 2 ) + "</p>";
 
+    }
+        if (document.cookie == "" ) {
+            document.getElementById("checkoutForm").hidden=true;
+        } else {
+            document.getElementById("checkoutForm").hidden=false;
+        }
     };
     return pub; }());
 

@@ -1,4 +1,5 @@
 var Cookie = (function () {
+    "use strict";
     var pub = {};
     pub.set = function (name, value, seconds) {
         var date, expires;
