@@ -9,7 +9,8 @@ var Showcart = (function(){
     pub.setup = function() {
         strData = Cookie.get("ShoppingCart");
         if (strData == ""){
-            document.getElementById("checkoutForm").hidden=true;
+            /*document.getElementById("checkoutForm").hidden=true;*/
+            $("#checkoutForm").hide();
             return "";
         }
         myObjs  = JSON.parse(strData);
@@ -23,29 +24,29 @@ var Showcart = (function(){
         {
             name = myObjs[i]["title"];
             price = myObjs[i]["price"];
-       /*     alert(( name ) + "->  "+ price );*/
+
             text =  text + "<tr><td style='text-align:left; width: 50%'>"+ name + "</td>"+
                 "<td style='text-align: right'>" + price + "</td>" +"</tr>";
             summ = summ + parseFloat(price);
         }
-        text = text + "</tr></table>";
-        target = document.getElementById("cart1");
-        target.innerHTML =  text + "<hr><br><p style='text-align: center'>"+ "\nTotal cost  : " + summ.toFixed( 2 ) + "</p>";
+        text = text + "</tr></table>"
+            + "<hr><br><p style='text-align: center'>"+ "\nTotal cost  : " + summ.toFixed( 2 ) + "</p>";
 
+
+        /*target = document.getElementById("cart1");
+        target.innerHTML =  text + "<hr><br><p style='text-align: center'>"+ "\nTotal cost  : " + summ.toFixed( 2 ) + "</p>";
+        */
+        $("#cart1").html(text);
     }
         if (document.cookie == "" ) {
-            document.getElementById("checkoutForm").hidden=true;
+            /*document.getElementById("checkoutForm").hidden=true;*/
+            $("#checkoutForm").hide();
+
         } else {
-            document.getElementById("checkoutForm").hidden=false;
+            /*document.getElementById("checkoutForm").hidden=false;*/
+            $("#checkoutForm").show();
         }
     };
     return pub; }());
 
-
-if (window.addEventListener) {
-    window.addEventListener("load", Showcart.setup);
-} else if (window.attachEvent) {
-    window.attachEvent("onload", Showcart.setup);
-} else {
-    alert("Could not attach ’Showcart.setup’ to the ’window.onload’ event");
-}
+$(document).ready(Showcart.setup);

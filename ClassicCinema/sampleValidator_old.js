@@ -203,13 +203,13 @@ var SampleValidator = (function () {
         }
     }
     function checkDeliveryEmail(deliveryEmail, messages) {
-            if (!checkNotEmpty(deliveryEmail)) {
-                messages.push("You must enter e-mail");
+        if (!checkNotEmpty(deliveryEmail)) {
+            messages.push("You must enter e-mail");
         }
-    var pattern = /^[a-zA-Z0-9]+[@][a-z,A-Z,0-9]+[.][a-z,A-Z]+$/;
-            if (!pattern.test(deliveryEmail)){
-                messages.push("Enter correct e-mail address");
-            }
+        var pattern = /^[a-zA-Z0-9]+[@][a-z,A-Z,0-9]+[.][a-z,A-Z]+$/;
+        if (!pattern.test(deliveryEmail)){
+            messages.push("Enter correct e-mail address");
+        }
     }
     function checkDeliveryPostcode (deliveryPostcode, messages) {
         if (!checkNotEmpty(deliveryPostcode)) {
@@ -235,24 +235,19 @@ var SampleValidator = (function () {
         messages = [];
 
         // Validate Address Details
-        /*deliveryName = document.getElementById("deliveryName").value;*/
-        deliveryName = $("#deliveryName").value;
+        deliveryName = document.getElementById("deliveryName").value;
         checkDeliveryName(deliveryName, messages);
 
-        /*deliveryAddress1 = document.getElementById("deliveryAddress1").value;*/
-        deliveryAddress1 = $("#deliveryAddress1").value;
+        deliveryAddress1 = document.getElementById("deliveryAddress1").value;
         checkDeliveryAddress(deliveryAddress1, messages);
 
-        /*deliveryCity = document.getElementById("deliveryCity").value;*/
-        deliveryCity = $("#deliveryCity").value;
+        deliveryCity = document.getElementById("deliveryCity").value;
         checkDeliveryCity(deliveryCity, messages);
 
-        /*deliveryEmail = document.getElementById("deliveryEmail").value;*/
-        deliveryEmail = $("#deliveryEmail").value;
+        deliveryEmail = document.getElementById("deliveryEmail").value;
         checkDeliveryEmail(deliveryEmail, messages);
 
-        /*deliveryPostcode = document.getElementById("deliveryPostcode").value;*/
-        deliveryPostcode = $("#deliveryPostcode").value;
+        deliveryPostcode = document.getElementById("deliveryPostcode").value;
         checkDeliveryPostcode(deliveryPostcode, messages);
 
         // TO BE ADDED
@@ -260,32 +255,26 @@ var SampleValidator = (function () {
         // Validate Credit Card Details
 
         // This depends a bit on the type of card, so get that first
-        /*cardType = document.getElementById("cardType").value;*/
-        cardType = $("#cardType").value;
+        cardType = document.getElementById("cardType").value;
 
         // Credit card number validation
-        /*cardNumber = document.getElementById("cardNumber").value;*/
-        cardNumber = $("#cardNumber").value;
+        cardNumber = document.getElementById("cardNumber").value;
         checkCreditCardNumber(cardType, cardNumber, messages);
 
         // Expiry date validation
-        /*cardMonth = document.getElementById("cardMonth").value;*/
-        cardMonth = $("#cardMonth").value;
-        /*cardYear = document.getElementById("cardYear").value;*/
-        cardYear = $("#cardYear").value;
+        cardMonth = document.getElementById("cardMonth").value;
+        cardYear = document.getElementById("cardYear").value;
         checkCreditCardDate(cardMonth, cardYear, messages);
 
         // CVC validation
-        /*cardValidation = document.getElementById("cardValidation").value;*/
-        cardValidation = $("#cardValidation").value;
+        cardValidation = document.getElementById("cardValidation").value;
         checkCreditCardValidation(cardType, cardValidation, messages);
 
         if (messages.length === 0) {
             // Checkout successful, clear the cart
             Cookie.clear("ShoppingCart");
             // Display a friendly message
-            /*document.getElementById("main").innerHTML = "<p>Thank you for your order</p>";*/
-            $("#main").html("<p>Thank you for your order</p>");
+            document.getElementById("main").innerHTML = "<p>Thank you for your order</p>";
         } else {
             // Report the error messages
             errorHTML = "<p><strong>There were errors processing your form</strong></p>";
@@ -295,13 +284,10 @@ var SampleValidator = (function () {
             });
             errorHTML += "</ul>";
             if (errorHTML == "") {
-                /*document.getElementById("errors").hidden = true;*/
-                $("#errors").hide();
+                document.getElementById("errors").hidden = true;
             } else {
-                /*document.getElementById("errors").innerHTML = errorHTML;*/
-                $("#errors").html(errorHTML);
-                /*document.getElementById("errors").hidden = false;*/
-                $("#errors").show();
+                document.getElementById("errors").innerHTML = errorHTML;
+                document.getElementById("errors").hidden = false;
             }
 
         }
@@ -319,21 +305,23 @@ var SampleValidator = (function () {
      * Note that if the validation fails (returns false) then the form is not submitted.
      */
     pub.setup = function () {
-        /*var form = document.getElementById("checkoutForm");
+        var form = document.getElementById("checkoutForm");
         form.onsubmit = validateCheckout;
-        document.getElementById("cardNumber").onkeypress = ";
+        document.getElementById("cardNumber").onkeypress = checkKeyIsDigit;
         document.getElementById("cardValidation").onkeypress = checkKeyIsDigit;
         //interactive validation
-        document.getElementById("deliveryPostcode").onkeypress = checkKeyIsDigit;*/
-        $("#checkoutForm").submit(validateCheckout);
-        $("#cardNumber").click(checkKeyIsDigit);
-        $("#cardValidation").click(checkKeyIsDigit);
-        $("#deliveryPostcode").click(checkKeyIsDigit);
-
+        document.getElementById("deliveryPostcode").onkeypress = checkKeyIsDigit;
     };
 
     // Expose public interface
     return pub;
 }());
 
-$(document).ready(SampleValidator.setup);
+// The usual onload event handling to call SampleValidator.setup
+if (window.addEventListener) {
+    window.addEventListener('load', SampleValidator.setup);
+} else if (window.attachEvent) {
+    window.attachEvent('onload', SampleValidator.setup);
+} else {
+    alert("Could not attach 'SampleValidator.setup' to the 'window.onload' event");
+}
