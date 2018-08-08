@@ -236,23 +236,24 @@ var SampleValidator = (function () {
 
         // Validate Address Details
         /*deliveryName = document.getElementById("deliveryName").value;*/
-        deliveryName = $("#deliveryName").value;
+        deliveryName = $("#deliveryName").val();
+        alert(deliveryName);
         checkDeliveryName(deliveryName, messages);
 
         /*deliveryAddress1 = document.getElementById("deliveryAddress1").value;*/
-        deliveryAddress1 = $("#deliveryAddress1").value;
+        deliveryAddress1 = $("#deliveryAddress1").val();
         checkDeliveryAddress(deliveryAddress1, messages);
 
         /*deliveryCity = document.getElementById("deliveryCity").value;*/
-        deliveryCity = $("#deliveryCity").value;
+        deliveryCity = $("#deliveryCity").val();
         checkDeliveryCity(deliveryCity, messages);
 
         /*deliveryEmail = document.getElementById("deliveryEmail").value;*/
-        deliveryEmail = $("#deliveryEmail").value;
+        deliveryEmail = $("#deliveryEmail").val();
         checkDeliveryEmail(deliveryEmail, messages);
 
         /*deliveryPostcode = document.getElementById("deliveryPostcode").value;*/
-        deliveryPostcode = $("#deliveryPostcode").value;
+        deliveryPostcode = $("#deliveryPostcode").val();
         checkDeliveryPostcode(deliveryPostcode, messages);
 
         // TO BE ADDED
@@ -261,23 +262,23 @@ var SampleValidator = (function () {
 
         // This depends a bit on the type of card, so get that first
         /*cardType = document.getElementById("cardType").value;*/
-        cardType = $("#cardType").value;
+        cardType = $("#cardType").val();
 
         // Credit card number validation
         /*cardNumber = document.getElementById("cardNumber").value;*/
-        cardNumber = $("#cardNumber").value;
+        cardNumber = $("#cardNumber").val();
         checkCreditCardNumber(cardType, cardNumber, messages);
 
         // Expiry date validation
         /*cardMonth = document.getElementById("cardMonth").value;*/
-        cardMonth = $("#cardMonth").value;
+        cardMonth = $("#cardMonth").val();
         /*cardYear = document.getElementById("cardYear").value;*/
-        cardYear = $("#cardYear").value;
+        cardYear = $("#cardYear").val();
         checkCreditCardDate(cardMonth, cardYear, messages);
 
         // CVC validation
         /*cardValidation = document.getElementById("cardValidation").value;*/
-        cardValidation = $("#cardValidation").value;
+        cardValidation = $("#cardValidation").val();
         checkCreditCardValidation(cardType, cardValidation, messages);
 
         if (messages.length === 0) {
@@ -326,9 +327,9 @@ var SampleValidator = (function () {
         //interactive validation
         document.getElementById("deliveryPostcode").onkeypress = checkKeyIsDigit;*/
         $("#checkoutForm").submit(validateCheckout);
-        $("#cardNumber").click(checkKeyIsDigit);
-        $("#cardValidation").click(checkKeyIsDigit);
-        $("#deliveryPostcode").click(checkKeyIsDigit);
+        $("#cardNumber").keypress(checkKeyIsDigit);
+        $("#cardValidation").keypress(checkKeyIsDigit);
+        $("#deliveryPostcode").keypress(checkKeyIsDigit);
 
     };
 
