@@ -9,9 +9,17 @@ var Reviews = (function() {
             $(data).find("review").each(function () {
                 var rating = $(this).find("rating")[0].textContent;
                 var user = $(this).find("user")[0].textContent;
-                row = row + "<tr><td>" + user + ":</td> <td>" + rating + "</td></tr>";
+                if (rating !== null && user !== null) {
+                    row = row + "<tr><td>" + user + ":</td> <td>" + rating + "</td></tr>";
+                } else {
+                    row = "";
+                }
             });
-            target.html(start + row + end);
+            if (row === ""){
+                target.html("There are not any ratings for this film.");
+            } else {
+                target.html(start + row + end);
+            }
             showHide = false;
         } else {
             target.html("");
