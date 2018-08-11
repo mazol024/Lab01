@@ -44,6 +44,10 @@ var Reviews = (function() {
                 cache: false,
                 success: function (data) {
                     parseReviews(data, target);
+                },
+                error: function () {
+                    target.html("There are not any ratings for this film.");
+                    showHide = false;
                 }
             });
         } else {
