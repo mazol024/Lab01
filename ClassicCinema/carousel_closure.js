@@ -2,7 +2,10 @@ var Carousel = (function(){
     var pub = {};
     var categoryList = []; var categoryIndex = 0;
     function nextCategory() {
-        var element = document.getElementById("carousel"); element.innerHTML = categoryList[categoryIndex].makeHTML(); categoryIndex += 1;
+        var element = document.getElementById("carousel"); element.innerHTML = categoryList[categoryIndex].makeHTML();
+        $("img").fadeToggle(2000);
+
+        categoryIndex += 1;
         if (categoryIndex >= categoryList.length) {
             categoryIndex = 0;
         }

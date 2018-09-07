@@ -3,7 +3,8 @@ var showHide = (function() {
     var pub = {};
 
     function showHideDetails() {
-        var paragraphs, p, images;
+            $(this).siblings().toggle(1000);
+       /* var paragraphs, p, images;
         paragraphs = this.parentNode.getElementsByTagName("p");
         images = this.parentNode.getElementsByTagName("img");
         for (p = 0; p < paragraphs.length; p += 1) {
@@ -15,7 +16,7 @@ var showHide = (function() {
                 paragraphs[p].style.display = "none";
                 images[0].style.display = "none";
             }
-        }
+        }*/
     }
 
     pub.setup = function () {
@@ -33,11 +34,13 @@ var showHide = (function() {
     };
     return pub;}());
 
+$(document).ready(showHide.setup);
 
+/*
 if (window.addEventListener) {
     window.addEventListener("load", showHide.setup);
 } else if (window.attachEvent) {
     window.attachEvent("onload", showHide.setup);
 } else {
     alert("Could not attach ’showHide.setup’ to the ’window.onload’ event");
-}
+}*/
