@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="jquery\jquery-3.3.1.min.js"></script>
+    <script src="jquery/jquery-3.3.1.min.js"></script>
     <script src="cookies.js"></script>
     <script src="cart.js"></script>
     <script src="showcart.js"></script>
@@ -17,6 +17,11 @@
     <script type="text/javascript">
     var target  = document.getElementById("cart1");
     target.innerText = "Your Cart is Empty." ;
+    $("#main").append("<button id='gohome'>Return</button>");
+    $("#gohome").click(function(e){
+        e.preventDefault();
+        window.location = "index.php";
+    });
     </script>
     <!--
         Sample HTML form for Lab 7.

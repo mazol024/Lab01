@@ -287,6 +287,11 @@ var SampleValidator = (function () {
             // Display a friendly message
             /*document.getElementById("main").innerHTML = "<p>Thank you for your order</p>";*/
             $("#main").html("<p>Thank you for your order</p>");
+            $("#main").append("<button id='gohome'>Return</button>");
+            $("#gohome").click(function(e){
+                e.preventDefault();
+                window.location = "index.php";
+            });
         } else {
             // Report the error messages
             errorHTML = "<p><strong>There were errors processing your form</strong></p>";
