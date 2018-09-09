@@ -2,41 +2,11 @@
 
 <html lang="en">
 
-    <head>
-        <title>Classic Cinema</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <link rel="stylesheet" href="leaflet\leaflet.css"/>
-        <script src="jquery\jquery-3.3.1.min.js"></script>
-        <script src="leaflet\leaflet.js"></script>
-        <script src="map.js"></script>
-    </head>
+    <?php
+        $scriptList = array('jquery/jquery-3.3.1.min.js', 'leaflet/leaflet.js', 'map.js');
+        include('header.php');
+    ?>
 
-    <body>
-
-        <header>
-            <h1>Classic Cinema</h1>
-    	<div id="user">
-            <div id="login">
-                <form id="loginForm">
-                    <label for="loginUser">Username: </label>
-                    <input type="text" name="loginUser" id="loginUser"><br>
-                    <label for="loginPassword">Password: </label>
-                    <input type="password" name="loginPassword" id="loginPassword"><br>
-                    <input type="submit" id="loginSubmit" value="Login">
-                </form>
-            </div>
-
-            <div id="logout">
-                <p>Welcome, <span id="logoutUser"></span></p>
-                <form id="logoutForm">
-                    <input type="submit" id="logoutSubmit" value="Logout">
-                </form>
-            </div>
-		</div>
-    </header>
-
-	
         <nav>
 
             <ul>
@@ -89,13 +59,5 @@
 
         <?php include ("footer.php");?>
 
-<!--        <footer>
-            <p>
-            Classic Cinema is not a real store. No products are available, and no money will be accepted.
-            <p>
-            All images from <a href="http://commons.wikimedia.org/wiki/Main_Page">Wikimedia Commons</a> and are believed to be in the public domain.
-            </p>
-        </footer>
--->
     </body>
 </html>
