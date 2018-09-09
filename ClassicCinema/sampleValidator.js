@@ -237,7 +237,6 @@ var SampleValidator = (function () {
         // Validate Address Details
         /*deliveryName = document.getElementById("deliveryName").value;*/
         deliveryName = $("#deliveryName").val();
-        alert(deliveryName);
         checkDeliveryName(deliveryName, messages);
 
         /*deliveryAddress1 = document.getElementById("deliveryAddress1").value;*/
@@ -325,17 +324,13 @@ var SampleValidator = (function () {
      * Note that if the validation fails (returns false) then the form is not submitted.
      */
     pub.setup = function () {
-        /*var form = document.getElementById("checkoutForm");
-        form.onsubmit = validateCheckout;
-        document.getElementById("cardNumber").onkeypress = ";
-        document.getElementById("cardValidation").onkeypress = checkKeyIsDigit;
-        //interactive validation
-        document.getElementById("deliveryPostcode").onkeypress = checkKeyIsDigit;*/
-        $("#checkoutForm").submit(validateCheckout);
+
+    /**
+    $("#checkoutForm").submit(validateCheckout);
         $("#cardNumber").keypress(checkKeyIsDigit);
         $("#cardValidation").keypress(checkKeyIsDigit);
         $("#deliveryPostcode").keypress(checkKeyIsDigit);
-
+        */
     };
 
     // Expose public interface
