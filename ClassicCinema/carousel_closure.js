@@ -37,10 +37,13 @@ if (document.getElementById) {
 }
 */
 
+$(document).ready(Carousel.setup);
+/*
+
 if (window.addEventListener) {
     window.addEventListener("load", Carousel.setup);
 } else if (window.attachEvent) {
     window.attachEvent("onload", Carousel.setup);
 } else {
     alert("Could not attach ’MovieCategories.setup’ to the ’window.onload’ event");
-}
+}*/
