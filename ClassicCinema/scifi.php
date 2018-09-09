@@ -7,18 +7,6 @@
         include('header.php');
     ?>
 
-        <nav>
-            <ul>
-                <li> <a href="index.php">Home</a>
-                <li> <a href="classic.php">Classics</a>
-                <li> Sci&nbsp;Fi
-                <li> <a href="hitchcock.php">Hitchcock</a>
-                <hr>
-                <li><a href="contact.php">Contact</a></li>
-                <li><a href="showcart.php">Shopping Cart</a></li>
-            </ul>
-        </nav>
-
         <main>
             <h2>Science Fiction and Horror</h2>
 

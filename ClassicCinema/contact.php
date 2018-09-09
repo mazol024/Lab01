@@ -7,21 +7,6 @@
         include('header.php');
     ?>
 
-        <nav>
-
-            <ul>
-                <li> <a href="index.php">Home</a></li>
-                <li> <a href="classic.php">Classics</a>
-                <li> <a href="scifi.php">Sci&nbsp;Fi</a>
-                <li> <a href="hitchcock.php">Hitchcock</a>
-                <hr>
-                <li>Contact</li>
-            </ul>
-
-
-
-        </nav>
-
         <main>
             <figure id="map">
                 <img src="images/map.png">
