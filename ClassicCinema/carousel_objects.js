@@ -28,11 +28,11 @@ function nextObject() {
 function setup() {
     "use strict"
     objList = [];
-    var classics = new MovieCategory("Classics","images/Metropolis.jpg","classic.html");
+    var classics = new MovieCategory("Classics","images/Metropolis.jpg","classic.php");
     objList.push(classics);
-    var scifi = new MovieCategory("SciFi","images/Plan_9_from_Outer_Space.jpg","scifi.html");
+    var scifi = new MovieCategory("SciFi","images/Plan_9_from_Outer_Space.jpg","scifi.php");
     objList.push(scifi);
-    var hitchcock = new MovieCategory("Hitchcock","images/Vertigo.jpg","hitchcock.html");
+    var hitchcock = new MovieCategory("Hitchcock","images/Vertigo.jpg","hitchcock.php");
     objList.push(hitchcock);
     objIndex = 0;
     nextObject();

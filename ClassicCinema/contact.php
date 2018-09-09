@@ -40,10 +40,10 @@
         <nav>
 
             <ul>
-                <li> <a href="index.html">Home</a></li>
-                <li> <a href="classic.html">Classics</a>
-                <li> <a href="scifi.html">Sci&nbsp;Fi</a>
-                <li> <a href="hitchcock.html">Hitchcock</a>
+                <li> <a href="index.php">Home</a></li>
+                <li> <a href="classic.php">Classics</a>
+                <li> <a href="scifi.php">Sci&nbsp;Fi</a>
+                <li> <a href="hitchcock.php">Hitchcock</a>
                 <hr>
                 <li>Contact</li>
             </ul>

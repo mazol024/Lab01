@@ -44,12 +44,12 @@
 
             <ul>
                 <li> Home
-                <li> <a href="classic.html">Classics</a>
-                <li> <a href="scifi.html">Sci&nbsp;Fi</a>
-                <li> <a href="hitchcock.html">Hitchcock</a>
+                <li> <a href="classic.php">Classics</a>
+                <li> <a href="scifi.php">Sci&nbsp;Fi</a>
+                <li> <a href="hitchcock.php">Hitchcock</a>
                 <hr>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="showcart.html">Shopping Cart</a></li>
+                <li><a href="contact.php">Contact</a></li>
+                <li><a href="showcart.php">Shopping Cart</a></li>
             </ul>
 
         </nav>

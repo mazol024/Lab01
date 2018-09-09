@@ -16,7 +16,7 @@
     <body>
 
         <header>
-            <h1>Classic Cinema</h1>s
+            <h1>Classic Cinema</h1>
 
             <div id="user">
                 <div id="login">
@@ -40,13 +40,13 @@
 
         <nav>
             <ul>
-                <li> <a href="index.html">Home</a>
-                <li> <a href="classic.html">Classics</a>
-                <li> <a href="scifi.html">Sci&nbsp;Fi</a>
+                <li> <a href="index.php">Home</a>
+                <li> <a href="classic.php">Classics</a>
+                <li> <a href="scifi.php">Sci&nbsp;Fi</a>
                 <li> Hitchcock
                 <hr>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="showcart.html">Shopping Cart</a></li>
+                <li><a href="contact.php">Contact</a></li>
+                <li><a href="showcart.php">Shopping Cart</a></li>
             </ul>
 
         </nav>
