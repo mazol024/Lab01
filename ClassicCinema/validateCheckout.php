@@ -1,7 +1,7 @@
 <?php
 $scriptList = array('jquery/jquery-3.3.1.min.js', 'cookies.js', 'cart.js', 'showcart.js');
 include("header.php");
-include ("validationFunctions.php");
+include ("secure/validationFunctions.php");
 ?>
 <main>
 
@@ -23,27 +23,32 @@ include ("validationFunctions.php");
     ?>
         <p><em> <?php
                 if ( isEmpty($deliveryName)) {
-                    array_push($errorsList, "Please input Personal Name!");
+                    array_push($errorsList, "Please, enter Personal Name!");
                 }
                 ?></em></p>
         <p><em> <?php
                 if ( isEmpty($deliveryCity) ) {
-                    array_push($errorsList, "Please input City name!");
+                    array_push($errorsList, "Please, enter City name!");
+                }
+                ?></em></p>
+        <p><em> <?php
+                if ( isEmpty($deliveryAddress1) ) {
+                    array_push( $errorsList,"Please, enter correct delivery address!");
                 }
                 ?></em></p>
         <p><em> <?php
                 if ( !isEmail($deliveryEmail) ) {
-                    array_push( $errorsList,"Please input correct e-mail address!");
+                    array_push( $errorsList,"Please, enter correct e-mail address!");
                 }
                 ?></em></p>
         <p><em> <?php
                 if ( !isDigits($deliveryPostcode) ) {
-                    array_push( $errorsList,"Please input correct ZIPcode!");
+                    array_push( $errorsList,"Please, enter correct ZIPcode!");
                 }
                 ?></em></p>
         <p><em> <?php
                 if ( !checkCardVerification($cardType,$cardValidation) ) {
-                    array_push( $errorsList,"Please input correct CVC code!");
+                    array_push( $errorsList,"Please, enter correct CVC code!");
                 }
                 ?></em></p>
         <p><em> <?php
@@ -53,7 +58,7 @@ include ("validationFunctions.php");
                 ?></em></p>
         <p><em> <?php
                 if ( !checkCardNumber($cardType, $cardNumber) ) {
-                    array_push( $errorsList, "Please input correct Card Number!");
+                    array_push( $errorsList, "Please, enter correct Card Number!");
                 }
                 if ( count($errorsList) < 3 ) {
                     echo $errorsList[0];
