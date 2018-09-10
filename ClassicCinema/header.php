@@ -73,10 +73,10 @@
             } else {
                 echo "<li> <a href='showcart.php'>Shopping Cart</a>";
             }*/
-            if ($currentPage === 'validateCheckout.php') {
+            if ($currentPage === 'checkout.php') {
                 echo "<li> Shopping Cart";
             } else {
-                echo "<li> <a href='validateCheckout.php'>Shopping Cart</a>";
+                echo "<li> <a href='checkout.php'>Shopping Cart</a>";
             }
         ?>
     </ul>
