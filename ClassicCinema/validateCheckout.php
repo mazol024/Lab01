@@ -1,4 +1,5 @@
 <?php
+session_start();
 $scriptList = array('jquery/jquery-3.3.1.min.js', 'cookies.js', 'cart.js', 'showcart.js');
 include("header.php");
 include ("secure/validationFunctions.php");
@@ -10,58 +11,64 @@ include ("secure/validationFunctions.php");
     $errorsList = array('Thank you for your puchase !');
     array_push( $errorsList,'You must fix Errors: ');
     if (isset($_POST['submit'])) {
-        $deliveryName = htmlentities($_POST['deliveryName']);
-        $deliveryEmail = htmlentities($_POST['deliveryEmail']);
-        $deliveryAddress1 = htmlentities($_POST['deliveryAddress1']);
-        $deliveryCity = htmlentities($_POST['deliveryCity']);
-        $deliveryPostcode = htmlentities($_POST['deliveryPostcode']);
-        $cardNumber = htmlentities($_POST['cardNumber']);
-        $cardValidation = htmlentities($_POST['cardValidation']);
-        $cardType = htmlentities($_POST['cardType']);
-        $cardMonth = htmlentities($_POST['cardMonth']);
-        $cardYear = htmlentities($_POST['cardYear']);
-    ?>
-        <p><em> <?php
-                if ( isEmpty($deliveryName)) {
-                    array_push($errorsList, "Please, enter Personal Name!");
-                }
-                ?></em></p>
-        <p><em> <?php
-                if ( isEmpty($deliveryCity) ) {
-                    array_push($errorsList, "Please, enter City name!");
-                }
-                ?></em></p>
-        <p><em> <?php
-                if ( isEmpty($deliveryAddress1) ) {
-                    array_push( $errorsList,"Please, enter correct delivery address!");
-                }
-                ?></em></p>
-        <p><em> <?php
-                if ( !isEmail($deliveryEmail) ) {
-                    array_push( $errorsList,"Please, enter correct e-mail address!");
-                }
-                ?></em></p>
-        <p><em> <?php
-                if ( !isDigits($deliveryPostcode) ) {
-                    array_push( $errorsList,"Please, enter correct ZIPcode!");
-                }
-                ?></em></p>
-        <p><em> <?php
+    $deliveryName = htmlentities($_POST['deliveryName']);
+    $_SESSION['deliveryName']=$deliveryName;
+    $deliveryEmail = htmlentities($_POST['deliveryEmail']);
+    $_SESSION['deliveryEmail']=$deliveryEmail;
+    $deliveryAddress1 = htmlentities($_POST['deliveryAddress1']);
+    $_SESSION['deliveryAddress1']=$deliveryAddress1;
+    $deliveryCity = htmlentities($_POST['deliveryCity']);
+    $_SESSION['deliveryCity']=$deliveryCity;
+    $deliveryPostcode = htmlentities($_POST['deliveryPostcode']);
+    $_SESSION['deliveryPostcode']=$deliveryPostcode;
+    $cardNumber = htmlentities($_POST['cardNumber']);
+    $_SESSION['cardNumber']=$cardNumber;
+    $cardValidation = htmlentities($_POST['cardValidation']);
+    $_SESSION['cardValidation']=$cardValidation;
+    $cardType = htmlentities($_POST['cardType']);
+    $_SESSION['cardType']=$cardType;
+    $cardMonth = htmlentities($_POST['cardMonth']);
+    $_SESSION['cardMonth']=$cardMonth;
+    $cardYear = htmlentities($_POST['cardYear']);
+    $_SESSION['cardYear']=$cardYear;
+
+            if (isEmpty($deliveryName)) {
+                array_push($errorsList, "Please, enter Personal Name!");
+            }
+
+            if (isEmpty($deliveryCity)) {
+                array_push($errorsList, "Please, enter City name!");
+            }
+
+            if (isEmpty($deliveryAddress1)) {
+                array_push($errorsList, "Please, enter correct delivery address!");
+            }
+
+            if (!isEmail($deliveryEmail)) {
+                array_push($errorsList, "Please, enter correct e-mail address!");
+            }
+
+            if ((strlen($deliveryPostcode) < 4) || !isDigits($deliveryPostcode)) {
+                    array_push($errorsList, "Please, enter correct ZIPcode!");
+
+            }
+
                 if ( !checkCardVerification($cardType,$cardValidation) ) {
                     array_push( $errorsList,"Please, enter correct CVC code!");
                 }
-                ?></em></p>
-        <p><em> <?php
+
                 if ( !checkCardDate($cardMonth,$cardYear) ) {
                     array_push( $errorsList,"Your card has expired!");
                 }
-                ?></em></p>
-        <p><em> <?php
+
                 if ( !checkCardNumber($cardType, $cardNumber) ) {
                     array_push( $errorsList, "Please, enter correct Card Number!");
                 }
                 if ( count($errorsList) < 3 ) {
+                    ?><br><em><?php
                     echo $errorsList[0];
+                    session_destroy();
+                    ?></em><?php
                 } else {
                     for ( $i = 1 ; $i < count($errorsList);$i++){
                         ?><br><em><?php
@@ -69,9 +76,6 @@ include ("secure/validationFunctions.php");
                         ?></em><?php
                     }
                 }
-                ?></em></p>
-
-        <?php
     }
     ?>
 

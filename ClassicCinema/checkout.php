@@ -1,6 +1,8 @@
 <?php
+session_start();
 $scriptList = array('jquery/jquery-3.3.1.min.js', 'cookies.js', 'cart.js', 'showcart.js');
 include("header.php");
+/*include("sessionVars.php");*/
 ?>
 
 
@@ -22,27 +24,52 @@ include("header.php");
                 <legend>Delivery Details:</legend>
                 <p>
                     <label for="deliveryName">Deliver to:</label>
-                    <input type="text" name="deliveryName" id="deliveryName" required>
+
+                    <input type="text" name="deliveryName" id="deliveryName"
+                        value = "<?php
+                        echo  $_SESSION['deliveryName'];
+                        ?>"  required >
                 </p>
+
                 <p>
                     <label for="deliveryEmail">Email:</label>
-                    <input type="email" name="deliveryEmail" id="deliveryEmail">
+                    <input type="email" name="deliveryEmail" id="deliveryEmail"
+                           value = "<?php
+                           echo $_SESSION["deliveryEmail"];
+                           ?>"
+                    >
                 </p>
                 <p>
                     <label for="deliveryAddress1">Address:</label>
-                    <input type="text" name="deliveryAddress1" id="deliveryAddress1" required>
+                    <input type="text" name="deliveryAddress1" id="deliveryAddress1" required
+                        value = "<?php
+                     echo $_SESSION["deliveryAddress1"];
+                    ?>"
+                    >
                 </p>
                 <p>
                     <label for="deliveryAddress2"></label>
-                    <input type="text" name="deliveryAddress2" id="deliveryAddress2">
+                    <input type="text" name="deliveryAddress2" id="deliveryAddress2"
+                           value = "<?php
+                           echo $_SESSION["deliveryAddress2"];
+                           ?>"
+                    >
                 </p>
                 <p>
                     <label for="deliveryCity">City:</label>
-                    <input type="text" name="deliveryCity" id="deliveryCity" required>
+                    <input type="text" name="deliveryCity" id="deliveryCity" required
+                           value = "<?php
+                           echo $_SESSION["deliveryCity"];
+                           ?>"
+                    >
                 </p>
                 <p>
                     <label for="deliveryPostcode">Postcode:</label>
-                    <input type="text" name="deliveryPostcode" id="deliveryPostcode" maxlength="4" required class="short">
+                    <input type="text" name="deliveryPostcode" id="deliveryPostcode" maxlength="4" required class="short"
+                           value = "<?php
+                           echo $_SESSION["deliveryPostcode"];
+                           ?>"
+                    >
                 </p>
             </fieldset>
 
@@ -59,7 +86,11 @@ include("header.php");
                 </p>
                 <p>
                     <label for="cardNumber">Card number:</label>
-                    <input type="text" name="cardNumber" id="cardNumber" maxlength="16" required>
+                    <input type="text" name="cardNumber" id="cardNumber" maxlength="16" required
+                           value = "<?php
+                           echo $_SESSION["cardNumber"];
+                           ?>"
+                    >
                 </p>
                 <p>
                     <label for="cardMonth">Expiry date:</label>
@@ -89,7 +120,11 @@ include("header.php");
                 </p>
                 <p>
                     <label for="cardValidation">CVC:</label>
-                    <input type="text" class="short" maxlength="4" name="cardValidation" id="cardValidation" required>
+                    <input type="text" class="short" maxlength="4" name="cardValidation" id="cardValidation" required
+                           value = "<?php
+                           echo $_SESSION["cardValidation"];
+                           ?>"
+                    >
                 </p>
             </fieldset>
             <input type="submit" name="submit">
@@ -98,5 +133,7 @@ include("header.php");
     </main>
 
 
-<?php include("footer.php"); ?>
+<?php
+include("footer.php");
+?>
 </body></html>

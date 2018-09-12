@@ -17,13 +17,15 @@ COSC212 2018, Classic Cinema, Steven Mills
 
 /* General formatting for the page */
 
-body {
+body, .cart1 {
     background-color: #dddddd;
     font-size: 10pt;
     font-family: Verdana, sans-serif;
     text-align: left;
 }
-
+.cart1 {
+    background-color: #eeeeee;
+}
 /* Common formatting for main block elements */
 
 div, nav, header, footer, main, #map{
