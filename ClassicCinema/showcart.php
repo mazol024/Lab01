@@ -32,9 +32,9 @@
 
     <!-- The form doesn't have an action or a method yet.
          We'll get to that later in the course. -->
-    <form id="checkoutForm" novalidate>
+    <!--<form id="checkoutForm" novalidate>
         <fieldset>
-            <!-- First section of form is delivery address etc. -->
+
             <legend>Delivery Details:</legend>
             <p>
                 <label for="deliveryName">Deliver to:</label>
@@ -62,7 +62,7 @@
             </p>
         </fieldset>
 
-        <!-- Next section has credit card details -->
+
         <fieldset>
             <legend>Payment Details:</legend>
             <p>
@@ -109,7 +109,7 @@
             </p>
         </fieldset>
         <input type="submit">
-    </form>
+    </form>-->
     <div id="errors"></div>
 </main>
 </body>

@@ -4,19 +4,12 @@ $scriptList = array('jquery/jquery-3.3.1.min.js', 'cookies.js', 'cart.js', 'show
 include("header.php");
 /*include("sessionVars.php");*/
 ?>
-
-
     <main id="main">
         <H3>Your Shopping Cart:</H3>
         <div id="cart1"></div>
         <script type="text/javascript">
             var target  = document.getElementById("cart1");
             target.innerText = "Your Cart is Empty." ;
-           /* $("#main").append("<button id='gohome'>Return</button>");
-            $("#gohome").click(function(e){
-                e.preventDefault();
-                window.location = "index.php";
-            });*/
         </script>
         <form id="checkoutForm" novalidate action="validateCheckout.php" method="POST">
             <fieldset>

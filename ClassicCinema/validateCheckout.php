@@ -1,6 +1,6 @@
 <?php
 session_start();
-$scriptList = array('jquery/jquery-3.3.1.min.js', 'cookies.js', 'cart.js', 'showcart.js');
+$scriptList = array('jquery/jquery-3.3.1.min.js', 'cookies.js', 'cart.js');
 include("header.php");
 include ("secure/validationFunctions.php");
 ?>
@@ -68,7 +68,7 @@ include ("secure/validationFunctions.php");
                     ?><br><em><?php
                     echo $errorsList[0];
                     session_destroy();
-                    ?></em><?php
+                    ?></em> <script>Cookie.clear("ShoppingCart");</script><?php
                 } else {
                     for ( $i = 1 ; $i < count($errorsList);$i++){
                         ?><br><em><?php
