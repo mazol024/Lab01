@@ -1,16 +1,18 @@
 <?php
 session_start();
-$scriptList = array('jquery/jquery-3.3.1.min.js', 'cookies.js', 'cart.js', 'showcart.js');
+$scriptList = array('jquery/jquery-3.3.1.min.js');
 include("header.php");
 /*include("sessionVars.php");*/
 ?>
     <main id="main">
         <H3>Your Shopping Cart:</H3>
-        <div id="cart1"></div>
-        <script type="text/javascript">
+        <div id="cart1">
+            <?php include ('showCookie.php'); ?>
+        </div>
+        <!--<script type="text/javascript">
             var target  = document.getElementById("cart1");
             target.innerText = "Your Cart is Empty." ;
-        </script>
+        </script>-->
         <form id="checkoutForm" novalidate action="validateCheckout.php" method="POST">
             <fieldset>
                 <!-- First section of form is delivery address etc. -->
@@ -127,6 +129,7 @@ include("header.php");
 
 
 <?php
+include ("showHideForm.php");
 include("footer.php");
 ?>
 </body></html>
