@@ -67,6 +67,7 @@ include ("secure/validationFunctions.php");
                 if ( count($errorsList) < 3 ) {
                     ?><br><em><?php
                     echo $errorsList[0];
+                    include ('writeXML.php');
                     session_destroy();
                     ?></em> <script>Cookie.clear("ShoppingCart");</script><?php
                 } else {

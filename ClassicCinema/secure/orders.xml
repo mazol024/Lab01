@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<orders>
+    <order>
+    <delivery>
+        <name>Steven Mills</name>
+        <email>steven@cs.otago.ac.nz</email>
+        <address>University of Otago, PO Box 56</address>
+        <city>Dunedin</city>
+        <postcode>9054</postcode>
+    </delivery>
+    <items>
+        <item>
+            <title>Metropolis (1927)</title>
+            <price>19.99</price>
+        </item>
+        <item>
+            <title>Tarantula (1955)</title>
+            <price>7.99</price>
+        </item>
+    </items>
+    </order>
+</orders>

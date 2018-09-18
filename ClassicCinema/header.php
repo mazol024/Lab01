@@ -68,11 +68,11 @@
             } else {
                 echo "<li> <a href='contact.php'>Contact</a>";
             }
-            /*if ($currentPage === 'showcart.php') {
-                echo "<li> Shopping Cart";
+            if ($currentPage === 'orders.php') {
+                echo "<li> Orders";
             } else {
-                echo "<li> <a href='showcart.php'>Shopping Cart</a>";
-            }*/
+                echo "<li> <a href='orders.php'>Orders</a>";
+            }
             if ($currentPage === 'checkout.php') {
                 echo "<li> Shopping Cart";
             } else {
