@@ -18,7 +18,8 @@ include('header.php');
         <?php
 
         $showForm = true;
-        if (isset($_POST["submit1"])) {
+        if (isset($_POST["submit1"]) && ($_POST["newPassword1"] === $_POST["newPassword"])) {
+
             $showForm = false;
             // Validate form. If there is an error
             // set $showForm = true;
@@ -32,7 +33,7 @@ include('header.php');
             $conn = new mysqli('sapphire.otago.ac.nz', 'omazhanov', 'pwd123', 'omazhanov_dev');
             ?> <br><?php
             if ($conn->connect_errno) {
-// Something went wrong connecting
+            // Something went wrong connecting
                 echo "Conection error!   Exitting...";
                 exit();
             }
@@ -68,6 +69,9 @@ include('header.php');
             $conn->close();
         }
         if ($showForm) {
+            if ( $_POST["newPassword1"] !== $_POST["newPassword"] ) {
+                echo "Please , reenter password correctly";
+            }
             ?>
             <div id="login">
             <form  action="<?php echo  $_SERVER["PHP_SELF"]; ?>" method="POST" >
@@ -75,6 +79,8 @@ include('header.php');
                 <input type="text" name="newUser" id="newUser"  size="25" minlength="3" required><br>
                 <label for="newPassword">Password: </label>
                 <input type="password" name="newPassword" id="newPassword" size="25" minlength="8" required><br>
+                <label for="newPassword">Password: </label>
+                <input type="password" name="newPassword1" id="newPassword1" size="25" minlength="8" required><br>
                 <label for="newEmail">E-mail: </label>
                 <input type="text" name="newEmail" id="newEmail" size="25" minlength="6" required><br>
                 <input type="submit" id="submit1" name="submit1">
