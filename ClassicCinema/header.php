@@ -18,13 +18,13 @@
     <h1>Classic Cinema</h1>
     <div id="user">
         <div id="login">
-            <form id="loginForm" action="./secure/register.php" method="POST">
+            <form id="loginForm" action="register.php" method="POST">
                 <label for="loginUser">Username: </label>
-                <input type="text" name="loginUser" id="loginUser"><br>
+                <input type="text" name="loginUser" id="loginUser" required><br>
                 <label for="loginPassword">Password: </label>
-                <input type="password" name="loginPassword" id="loginPassword"><br>
-                <input type="button" id="loginSubmit" value="Login">
-                <input type="submit" name="submit" value="Register">
+                <input type="password" name="loginPassword" id="loginPassword" required><br>
+                <input type="submit" id="loginSubmit" value="Login">
+                <input type="submit" name="register" value="Register">
             </form>
         </div>
 
