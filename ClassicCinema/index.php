@@ -3,7 +3,6 @@
 <html lang="en">
 
     <?php
-    session_start();
         $scriptList = array('jquery/jquery-3.3.1.min.js', 'carousel_closure.js');
         include('header.php');
     ?>

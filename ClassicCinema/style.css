@@ -6,8 +6,8 @@ COSC212 2018, Classic Cinema, Steven Mills
 
 @font-face {
     font-family: 'UpperEastSide';
-    src: url('Fonts/UpperEastSide-webfont.eot');
-    src: url('Fonts/UpperEastSide-webfont.eot?#iefix') format('embedded-opentype'),
+//    src: url('Fonts/UpperEastSide-webfont.eot');
+//    src: url('Fonts/UpperEastSide-webfont.eot?#iefix') format('embedded-opentype'),
          url('Fonts/UpperEastSide-webfont.woff') format('woff'),
          url('Fonts/UpperEastSide-webfont.ttf') format('truetype'),
          url('Fonts/UpperEastSide-webfont.svg#UpperEastSideRegular') format('svg');
@@ -167,13 +167,17 @@ ul.frontpage li img {
 #login input[type=submit], #logout input[type=submit] {
     width: 60px;
 }
-
+#register {
+    font-size: 8pt;
+    text-align: right;
+    padding: 0;
+    margin: 0;
+}
 #logout {
     float: right;
     font-size: 8pt;
     padding: 0;
     margin: 0;
-    display: none;
 }
 
 #map{

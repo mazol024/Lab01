@@ -4,6 +4,9 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="leaflet/leaflet.css"/>
     <?php
+    if (session_id() === "") {
+        session_start();
+    }
     $currentPage = basename($_SERVER['PHP_SELF']);
     if (isset($scriptList) && is_array($scriptList)) {
         foreach ($scriptList as $script) {
@@ -18,19 +21,23 @@
     <h1>Classic Cinema</h1>
     <div id="user">
         <div id="login">
-            <form id="loginForm" action="register.php" method="POST">
+            <form id="loginForm" action="login.php" method="POST">
                 <label for="loginUser">Username: </label>
                 <input type="text" name="loginUser" id="loginUser" required><br>
                 <label for="loginPassword">Password: </label>
                 <input type="password" name="loginPassword" id="loginPassword" required><br>
                 <input type="submit" id="loginSubmit" value="Login">
-                <input type="submit" name="register" value="Register">
+            </form>
+            <form id="register" action="register.php" method="post">
+                <input type="submit" id="register" value="Register">
             </form>
         </div>
 
+
+
         <div id="logout">
             <p>Welcome, <span id="logoutUser"></span></p>
-            <form id="logoutForm">
+            <form id="logoutForm" action="logout.php" method="post">
                 <input type="submit" id="logoutSubmit" value="Logout">
             </form>
         </div>
@@ -79,7 +86,18 @@
             } else {
                 echo "<li> <a href='checkout.php'>Shopping Cart</a>";
             }
-        ?>
+            if ( isset($_SESSION['authenticatedUser'])) {
+                ?><script>
+                    $("#logout").show();
+                    $("#login").hide();
+                </script> <?php
+            } else {
+                ?><script>
+                    $("#logout").hide();
+                    $("#login").show();
+                </script><?php
+            }
+            ?>
     </ul>
 </nav>
 

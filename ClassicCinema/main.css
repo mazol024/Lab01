@@ -12,8 +12,8 @@ with rounded corners in the top left and bottom right with a radius of 20 pixels
 
 @font-face {
     font-family: 'uppereastsideregular';
-    src: url('UpperEastSide-webfont.eot');
-    src: url('UpperEastSide-webfont.eot?#iefix') format('embedded-opentype'),
+//    src: url('UpperEastSide-webfont.eot');
+//    src: url('UpperEastSide-webfont.eot?#iefix') format('embedded-opentype'),
     url('UpperEastSide-webfont.woff2') format('woff2'),
     url('UpperEastSide-webfont.woff') format('woff'),
     url('UpperEastSide-webfont.ttf') format('truetype'),
@@ -55,11 +55,8 @@ header {
     display: block;
     float: right;
 }
-#login{
+#login,#logout,#register{
     text-align: right;
-}
-#logout{
-    display: none;
 }
 header,nav,main,footer {
     border-radius: 20px 0 20px 0;
