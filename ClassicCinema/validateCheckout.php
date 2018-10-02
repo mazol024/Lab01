@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_id() === "") {
+    session_start();
+}
 $scriptList = array('jquery/jquery-3.3.1.min.js', 'cookies.js', 'cart.js');
 include("header.php");
 include ("secure/validationFunctions.php");
@@ -32,9 +34,9 @@ include ("secure/validationFunctions.php");
     $cardYear = htmlentities($_POST['cardYear']);
     $_SESSION['cardYear']=$cardYear;
 
-            if (isEmpty($deliveryName)) {
+    /*        if (isEmpty($deliveryName)) {
                 array_push($errorsList, "Please, enter Personal Name!");
-            }
+            }*/
 
             if (isEmpty($deliveryCity)) {
                 array_push($errorsList, "Please, enter City name!");

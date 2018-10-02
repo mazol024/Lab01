@@ -7,10 +7,28 @@
     if (session_id() === "") {
         session_start();
     }
-    $currentPage = basename($_SERVER['PHP_SELF']);
+    $_SESSION["lastPage"] = basename($_SERVER["PHP_SELF"]);
     if (isset($scriptList) && is_array($scriptList)) {
         foreach ($scriptList as $script) {
             echo "<script src='$script'></script>";
+        }
+    }
+    ?>
+    <?php
+    function addReviewForm($xmlFileName) {
+        if (isset($_SESSION['authenticatedUser'])) {
+            echo "<form action='writeReview.php' method='POST'>";
+            echo "<input type='hidden' name='xmlFileName' value='$xmlFileName'>";
+            echo "<label for='rating'>Rating:</label>";
+            echo "<select name='rating' id='rating'>";
+            echo "<option value=1>1</option>";
+            echo "<option value=2>2</option>";
+            echo "<option value=3>3</option>";
+            echo "<option value=4>4</option>";
+            echo "<option value=5>5</option>";
+            echo "</select>";
+            echo "<input type='submit' id='reviewForm' name='reviewForm'>";
+            echo "</form>";
         }
     }
     ?>
@@ -36,7 +54,7 @@
 
 
         <div id="logout">
-            <p>Welcome, <span id="logoutUser"></span></p>
+            <p>Welcome, <span id="logout"><?php echo $_SESSION["authenticatedUser"]; ?></span></p>
             <form id="logoutForm" action="logout.php" method="post">
                 <input type="submit" id="logoutSubmit" value="Logout">
             </form>
@@ -86,7 +104,7 @@
             } else {
                 echo "<li> <a href='checkout.php'>Shopping Cart</a>";
             }
-            if ( isset($_SESSION['authenticatedUser'])) {
+            if ( isset($_SESSION["authenticatedUser"])) {
                 ?><script>
                     $("#logout").show();
                     $("#login").hide();

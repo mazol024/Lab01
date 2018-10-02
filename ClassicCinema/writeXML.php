@@ -1,8 +1,11 @@
 <?php
+if (session_id() === "") {
+    session_start();
+}
 $orders = simplexml_load_file('./secure/orders.xml');
 $newOrder = $orders->addChild('order');
 $delivery = $newOrder->addChild('delivery');
-$delivery->addChild('name', $_POST['deliveryName']);
+$delivery->addChild('name', $_SESSION['authenticatedUser']);
 $delivery->addChild('email', $_POST['deliveryEmail']);
 $delivery->addChild('address', $_POST['deliveryAddress1']);
 $delivery->addChild('city', $_POST['deliveryCity']);

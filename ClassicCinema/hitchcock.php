@@ -19,8 +19,8 @@
                 <p>
                 $<span class="price">14.99</span>
                 <input type="button" value="Add to Cart" class="buy">
+                    <?php addReviewForm("The_Birds");?>
                 </p>
-
             </section>
 
             <section class="film">
@@ -32,6 +32,7 @@
                 <p>
                 $<span class="price">12.99</span>
                 <input type="button" value="Add to Cart" class="buy">
+                    <?php addReviewForm("Dial_M_for_Murder");?>
                 </p>
             </section>
 
@@ -44,6 +45,7 @@
                 <p>
                 $<span class="price">11.99</span>
                 <input type="button" value="Add to Cart" class="buy">
+                    <?php addReviewForm("The_Man_Who_Knew_Too_Much");?>
                 </p>
             </section>
 
@@ -56,6 +58,7 @@
                 <p>
                 $<span class="price">14.99</span>
                 <input type="button" value="Add to Cart" class="buy">
+                    <?php addReviewForm("North_by_Northwest");?>
                 </p>
             </section>
 
@@ -68,6 +71,7 @@
                 <p>
                 $<span class="price">16.99</span>
                 <input type="button" value="Add to Cart" class="buy">
+                    <?php addReviewForm("Vertigo");?>
                 </p>
             </section>
 

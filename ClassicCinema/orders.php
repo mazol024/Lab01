@@ -13,6 +13,9 @@ include('header.php');
 $orders = simplexml_load_file('./secure/orders.xml');
 foreach ($orders->order as $order) {
     $name = $order->delivery->name;
+    //if ( true ) {
+    if ( ( $name == $_SESSION["authenticatedUser"]) ||( $_SESSION["userRole"] == "admin") ) {
+        //echo  "AuthenticatedUser -> " . $_SESSION["authenticatedUser"];
     echo "</p>Name: $name<p>";
     $email = $order->delivery->email;
     echo "</p>E-mail: $email<p>";
@@ -33,6 +36,11 @@ foreach ($orders->order as $order) {
         ?> </div><?php
     }
     ?>  <hr> <?php
+    }
+
+}
+if ($name != $_SESSION["authenticatedUser"]) {
+    echo  "You have not got any orders.";
 }
 ?>
 </main>

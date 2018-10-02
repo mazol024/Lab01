@@ -19,6 +19,7 @@
                 <p>
                 $<span class="price">8.99</span>
                 <input type="button" value="Add to Cart" class="buy">
+                    <?php addReviewForm("Attack_of_the_50ft_Woman");?>
                 </p>
             </section>
 
@@ -31,6 +32,7 @@
                 <p>
                 $<span class="price">7.99</span>
                 <input type="button" value="Add to Cart" class="buy">
+                    <?php addReviewForm("The_Day_of_the_Triffids");?>
                 </p>
             </section>
 
@@ -43,6 +45,7 @@
                 <p>
                 $<span class="price">13.99</span>
                 <input type="button" value="Add to Cart" class="buy">
+                    <?php addReviewForm("Forbidden_Planet");?>
                 </p>
             </section>
 
@@ -55,6 +58,7 @@
                 <p>
                 $<span class="price">11.99</span>
                 <input type="button" value="Add to Cart" class="buy">
+                    <?php addReviewForm("King_Kong");?>
                 </p>
             </section>
 
@@ -67,6 +71,7 @@
                 <p>
                 $<span class="price">9.99</span>
                 <input type="button" value="Add to Cart" class="buy">
+                    <?php addReviewForm("The_Mummy");?>
                 </p>
             </section>
 
@@ -79,6 +84,7 @@
                 <p>
                 $<span class="price">14.99</span>
                 <input type="button" value="Add to Cart" class="buy">
+                    <?php addReviewForm("Plan_8_from_Outer_Space");?>
                 </p>
             </section>
 
@@ -92,6 +98,7 @@
                 <p>
                 $<span class="price">7.99</span>
                 <input type="button" value="Add to Cart" class="buy">
+                    <?php addReviewForm("Tarantula");?>
                 </p>
             </section>
 

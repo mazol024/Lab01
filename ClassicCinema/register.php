@@ -2,7 +2,10 @@
 
 <html lang="en">
 <?php
-session_start();
+if (session_id() === "") {
+    session_start();
+}
+
 $scriptList = array('jquery/jquery-3.3.1.min.js', 'carousel_closure.js');
 include('header.php');
 ?>
@@ -46,9 +49,9 @@ include('header.php');
                 ?><br><?php
                 echo "User created.";
                 $newPassword = sha1($newPassword);
-
-                $stmt = $conn->prepare("INSERT INTO users (username, password, email) VALUES (?, ?, ?)");
-                $stmt->bind_param("sss", $newUser, $newPassword, $newEmail);
+                $role = "user";
+                $stmt = $conn->prepare("INSERT INTO users (username, password, email, role) VALUES (?, ?, ?, ?)");
+                $stmt->bind_param("ssss", $newUser, $newPassword, $newEmail, $role);
                 $stmt->execute();
                 $stmt->close();
                 $conn->close();
@@ -73,7 +76,7 @@ include('header.php');
                 echo "Please , reenter password correctly";
             }
             ?>
-            <div id="login">
+            <div id="register">
             <form  action="<?php echo  $_SERVER["PHP_SELF"]; ?>" method="POST" >
                 <label for="newUser">Username: </label>
                 <input type="text" name="newUser" id="newUser"  size="25" minlength="3" required><br>

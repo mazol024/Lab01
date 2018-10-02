@@ -5,4 +5,6 @@
     <p>
         All images from <a href="http://commons.wikimedia.org/wiki/Main_Page">Wikimedia Commons</a> and are believed to be in the public domain.
     </p>
+
+
 </footer>

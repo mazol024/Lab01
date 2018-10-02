@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_id() === "") {
+    session_start();
+}
 $scriptList = array('jquery/jquery-3.3.1.min.js');
 include("header.php");
 /*include("sessionVars.php");*/
@@ -20,9 +22,9 @@ include("header.php");
                 <p>
                     <label for="deliveryName">Deliver to:</label>
 
-                    <input type="text" name="deliveryName" id="deliveryName"
+                    <input type="text" name="deliveryName" id="deliveryName" disabled
                         value = "<?php
-                        echo  $_SESSION['deliveryName'];
+                        echo  $_SESSION["authenticatedUser"];
                         ?>"  required >
                 </p>
 

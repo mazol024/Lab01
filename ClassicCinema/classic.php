@@ -19,6 +19,7 @@
                 <p>
                 $<span class="price">13.99</span>
                 <input type="button" value="Add to Cart" class="buy">
+                    <?php addReviewForm("Gone_With_the_Wind");?>
                  </p>
             </section>
 
@@ -31,6 +32,7 @@
                 <p>
                 $<span class="price">13.99</span>
                 <input type="button" value="Add to Cart" class="buy">
+                    <?php addReviewForm("The_Jazz_Singer");?>
                 </p>
             </section>
 
@@ -43,6 +45,7 @@
                 <p>
                 $<span class="price">19.99</span>
                 <input type="button" value="Add to Cart" class="buy">
+                    <?php addReviewForm("Metropolis");?>
                 </p>
             </section>
 
